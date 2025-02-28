@@ -11,7 +11,7 @@ def scan_network(ip_range):
     for host in nm.all_hosts():
         if nm[host].state() == 'up':
             print(f"\nScanning ports on {host}...")
-            nm.scan(hosts = host, arguments = '-p 22, 80, 443')     # SSH, HTTP, HTTPS
+            nm.scan(hosts = host, arguments = '-p 22,80,443')     # SSH, HTTP, HTTPS
             print(f"Host: {host}")
 
             for proto in nm[host].all_protocols():
